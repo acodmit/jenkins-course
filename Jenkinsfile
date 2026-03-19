@@ -74,6 +74,10 @@ pipeline {
             }
         }
         stage('Publish') {
+            when {
+                branch "feature/test_branch2*"
+            }
+            echo "TEST BRANCH 2"
             steps {
                 echo (message:"Publish3")
             script {
@@ -84,10 +88,6 @@ pipeline {
                 )
             }
             echo ("RTUPLOAD")
-            when {
-                branch "feature/test_branch2*"
-            }
-            echo "TEST BRANCH 2"
             withCredentials (
                 [usernamePassword(credentialsId:'user_acodmit', passwordVariable:'psw',usernameVariable: 'usr')])
                 {
