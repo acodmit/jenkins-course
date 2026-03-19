@@ -84,9 +84,9 @@ pipeline {
                 )
             }
             echo ("RTUPLOAD")
-            when (
-                branch "feature/test_branch2"
-            )
+            when {
+                branch "feature/test_branch2*"
+            }
             echo "TEST BRANCH 2"
             withCredentials (
                 [usernamePassword(credentialsId:'user_acodmit', passwordVariable:'psw',usernameVariable: 'usr')])
