@@ -5,7 +5,7 @@ def sendEmail(arg1, arg2, arg3, arg4) {
 }
 
 def OUTPUT = ''
-def PASS = ''
+//def PASS = ''
 
 // pipeline structure
 pipeline {
@@ -88,8 +88,8 @@ pipeline {
                 [usernamePassword(credentialsId:'user_acodmit', passwordVariable:'psw',usernameVariable: 'usr')])
                 {
                     echo ("USERNAME: ${usr}, PASSWORD: ${psw}")
-                    PASS += "${psw}"
-                    echo PASS
+                    //PASS += "${psw}"
+                    //echo PASS
                 }
                 rtUpload (
                     serverId:'test_id',
