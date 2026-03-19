@@ -85,7 +85,7 @@ pipeline {
             }
             echo ("RTUPLOAD")
             when (
-                branch feature/test_branch2
+                branch "feature/test_branch2"
             )
             echo "TEST BRANCH 2"
             withCredentials (
