@@ -77,7 +77,9 @@ pipeline {
             when {
                 branch "feature/test_branch2*"
             }
-            echo "TEST BRANCH 2"
+            steps {
+                echo "TEST BRANCH 2"
+            }
         }
         stage('Publish') {
             steps {
